@@ -1,0 +1,22 @@
+<view class="v1" style="height:{{clientHeight?clientHeight+'px':'auto'}}">
+ <!-- v2父容器  子view使用绝对布局 -->
+   <view class="v2">
+     <view class="txt-login">Hello ChatGPT</view>
+  
+     <!-- 账号 -->
+     <view class="username">
+       <!-- <image src="/images/zhang.png" class="ph"></image> -->
+       <input placeholder="请输入账号" type="text" bindinput="username" />
+     </view>
+     <!-- 密码 -->
+     <view class=password">
+       <!-- <image src="/images/mi.png" class="ps"></image> -->
+       <input placeholder="请输入密码" type="password" bindinput="password" />
+     </view>
+     <!-- 登录按钮 -->
+     <view class="login">
+       <button type="primary" bindtap="login">登录</button>
+     </view>
+   </view>
+ </view>
+  
