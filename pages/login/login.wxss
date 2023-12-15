@@ -18,6 +18,18 @@
   border-radius: 50rpx;
 }
 
+.v1 .v2 .welcome {
+  align-content: center;
+}
+
+.v1 .v2 .welcome .bg {
+  width: 300rpx;
+  height: 300rpx;
+  margin-top: -50rpx;
+  margin-left: 120rpx;
+  margin-bottom: -150rpx;
+}
+
 /* 白色区域内的登录文本 */
 .v1 .v2 .txt-login {
   margin-top: 50rpx;
@@ -30,6 +42,13 @@
   color: #000000;
   line-height: 100rpx;
   letter-spacing: 2rpx;
+}
+
+.v1 .v2 .icon-input::after {
+  content: "🔍";
+  font-size: 16px;
+  margin-right: 5px;
+  padding-left: 10px;
 }
 
 /* 手机图片+输入框+下划线的父容器view */
@@ -45,9 +64,9 @@
 }
 
 /* 手机图标 */
-.v1 .v2 .username .ph {
-  margin-top: 5rpx;
-  margin-left: 30rpx;
+.v1 .v2 .username .ur {
+  padding-top: 20rpx;
+  padding-left: 20rpx;
   width: 55rpx;
   height: 55rpx;
 }
@@ -73,19 +92,19 @@
 }
 
 /* 密码图标 */
-.v1 .v2 .password .ps {
-  margin-top: 5rpx;
-  margin-left: 30rpx;
+.v1 .v2 .password .pw {
+  padding-top: 20rpx;
+  padding-left: 20rpx;
   width: 55rpx;
   height: 55rpx;
 }
 
 /* 眼睛 图标*/
 .v1 .v2 .password .eye {
-  margin-top: 5rpx;
-  margin-left: 65rpx;
-  width: 55rpx;
-  height: 55rpx;
+  padding-top: 20rpx;
+  padding-right: 20rpx;
+  width: 60rpx;
+  height: 60rpx;
 }
 
 /* 密码输入框 */
@@ -107,9 +126,29 @@
   vertical-align: middle;
 }
 
-
 /* 登录按钮 */
 .v1 .v2 .login button {
+  padding: 0rpx;
+  line-height: 70rpx;
+  font-size: 30rpx;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rpx;
+}
+
+/* 登录按钮容器view */
+.v1 .v2 .container .logout {
+  width: 480rpx;
+  height: 90rpx;
+  position: absolute;
+  margin-top: 515rpx;
+  margin-left: 25rpx;
+  text-align: center;
+  vertical-align: middle;
+}
+
+/* 登录按钮 */
+.v1 .v2 .container .logout button {
   padding: 0rpx;
   line-height: 70rpx;
   font-size: 30rpx;

@@ -1,20 +1,21 @@
 // index.js
 // 获取应用实例
 const app = getApp()
+let server = 'https://fxbg.xksztech.com:8445'
+// let server = 'https://localhost:8445'
 
 Page({
   data: {
-  
+    buttons: [{text: '取消'}, {text: '确认'}],
+    isShow: false    
   },
-
   onShow: function () {
     if(wx.getStorageSync('expireTime')==null ||wx.getStorageSync('expireTime') < Date.now()){
-      console.log(wx.getStorageSync('expireTime')+"-->"+Date.now());
       wx.removeStorageSync('expireTime')
       let username = wx.getStorageSync('username')
       wx.removeStorageSync('username')
       wx.request({
-        url: 'http://127.0.0.1:80/user/logout',
+        url: server + '/mcgpt/user/logout',
         method: "get",
         data: {
           "username": username,
@@ -32,7 +33,7 @@ Page({
 
     }
     wx.request({
-      url: 'http://127.0.0.1:80/user/checkUserKey',
+      url: server + '/mcgpt/user/checkUserKey',
       method: "get",
       data: {
         "username": wx.getStorageSync('username'),
@@ -41,7 +42,6 @@ Page({
       success: ({
         data
       }) => {
-        console.log(data.code);
         if (data.code === 500) {
           wx.showToast({
             icon: 'none',
@@ -61,5 +61,40 @@ Page({
         url: '/pages/login/login',
       })
     }
+  },
+  logout(event){
+    this.setData({
+      isShow: true
+    })
+  },
+  confirmLogout({detail}){
+    console.log(detail.index);
+    if (detail.index == '1') {
+      wx.removeStorageSync('expireTime')
+      let username = wx.getStorageSync('username')
+      wx.removeStorageSync('username')
+      wx.request({
+        url: server + '/mcgpt/user/logout',
+        method: "get",
+        data: {
+          "username": username,
+        },
+        success: ({
+          data
+        }) => {
+          // wx.showToast({
+          //   icon: 'none',
+          //   title: '退出成功',
+          //   duration: 1500
+          // })
+        }
+      })
+      wx.redirectTo({
+        url: '/pages/login/login',
+      })
+    }
+    this.setData({
+      isShow: false
+    })
   }
 })

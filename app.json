@@ -1,9 +1,10 @@
 {
-  "pages": [
+  "pages": [  
     "pages/login/login",
-    "pages/index/index",
-    "pages/home/home",
-    "pages/chat/chat"
+    "pages/model/model",
+    "pages/chat/chat",
+    "pages/history/history",
+    "pages/logout/logout"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -15,24 +16,24 @@
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "selectedColor": "#33a3dc",
-    "list": [
-      {
-        "pagePath": "pages/login/login",
-        "text": "登录",
-        "iconPath": "/images/首页-置灰.png",
-        "selectedIconPath": "/images/首页-置灰 (1).png"
-      },
+    "list": [   
       {
         "pagePath": "pages/chat/chat",
         "text": "聊天",
-        "iconPath": "/images/消息-置灰.png",
-        "selectedIconPath": "/images/消息-置灰 (1).png"
+        "iconPath": "/images/message-off.png",
+        "selectedIconPath": "/images/message-on.png"
       },
       {
-        "pagePath": "pages/home/home",
+        "pagePath": "pages/history/history",
+        "text": "记录",
+        "iconPath": "/images/history-off.png",
+        "selectedIconPath": "/images/history-on.png"
+      },
+      {
+        "pagePath": "pages/logout/logout",
         "text": "退出",
-        "iconPath": "/images/我的.png",
-        "selectedIconPath": "/images/我的 (1).png"
+        "iconPath": "/images/logout-off.png",
+        "selectedIconPath": "/images/logout-on.png"
       }
     ]
   }

@@ -1,0 +1,10 @@
+<view class="v1">
+  <image src="/images/robot35.png" class="img-35" />
+  <button class="btn-35" bind:tap="chatByModel35">
+    Model3.5
+  </button>
+  <image src="/images/robot40.png" class="img-40" />
+  <button class="btn-40" bind:tap="chatByModel40">
+    Model4.0
+  </button>
+</view>

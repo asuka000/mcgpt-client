@@ -3,18 +3,25 @@
 const app = getApp()
 let username = ''
 let password = ''
+let server = 'https://fxbg.xksztech.com:8445'
+// let server = 'https://localhost:8445'
+var log = require('../../utils/log.js');
+
 Page({
   data: {
     username: '',
     password: '',
-    clientHeight: ''
+    clientHeight: '',
+    open: false,//默认不显示密码
+    focus:false,//是否获取焦点
   },
   onLoad() {
-    if (wx.getStorageSync('username') != null && wx.getStorageSync('username') != '') {
-      wx.switchTab({
-        url: '/pages/index/index',
-      })
-    }
+    wx.hideTabBar();
+    // if (wx.getStorageSync('username') != null && wx.getStorageSync('username') != '') {
+    //   wx.switchTab({
+    //     url: '/pages/mode/mode',
+    //   })
+    // }
     var that = this
     wx.getSystemInfo({
       success: function (res) {
@@ -34,7 +41,7 @@ Page({
     password = e.detail.value
   },
   //登录事件
-  login() {
+  login() {  
     let flag = false //表示账户是否存在,false为初始值
     if (username == '') {
       wx.showToast({
@@ -49,7 +56,7 @@ Page({
       })
     };
     wx.request({
-      url: 'http://localhost:80/user/login',
+      url: server + '/mcgpt/user/login',
       method: "get",
       data: {
         "username": username,
@@ -58,28 +65,60 @@ Page({
       success: ({
         data
       }) => {
-        console.log(data);
-        if (data.code === 200) {
+          // 处理请求中的错误  
           wx.showToast({
             icon: 'none',
-            title: '登陆成功',
+            title: '123',
             duration: 2500
-          })
+          }) 
+        console.log(data);
+        if (data.code === 200) {
+          // wx.showToast({
+          //   icon: 'none',
+          //   title: '登陆成功',
+          //   duration: 2500
+          // })
           wx.setStorageSync("username", username)
           wx.setStorageSync('expireTime', Date.now() + 60 * 60 * 24 * 1000);
           wx.setStorageSync('key', data.message)
           console.log("到期时间" + wx.getStorageSync('expireTime'))
-          wx.switchTab({
-            url: '/pages/index/index'
+          wx.redirectTo({
+            url: '/pages/model/model',
           })
         } else {
+          log.error( data.message);
           wx.showToast({
             icon: 'none',
             title: data.message,
             duration: 2500
           })
         }
-      }
+      },
+      catch: (error) => {  
+        // 处理请求中的错误  
+        wx.showToast({
+          icon: 'none',
+          title: error,
+          duration: 2500
+        }) 
+      }  
+    })
+  },
+
+
+  switch() {
+    this.setData({
+      open: !this.data.open
+    })
+  },
+  focus(){
+    this.setData({
+      focus:true
+    })
+  },
+  blur(){
+    this.setData({
+      focus:false
     })
   }
 })

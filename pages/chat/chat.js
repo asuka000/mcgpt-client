@@ -9,6 +9,11 @@ let socketOpen = false;
 let socketMsgQueue = [];
 let lineCount = Math.floor(windowWidth / 16) - 6;
 let curAnsCount = 0;
+let server = 'https://fxbg.xksztech.com:8445'
+let wx_server = 'wss://fxbg.xksztech.com:8445'
+// let server = 'https://localhost:8445'
+// let wx_server = 'wss://localhost:8445'
+
 /**
  * 初始化数据
  */
@@ -17,7 +22,7 @@ function initData(that) {
   msgList = [{
     speaker: 'server',
     contentType: 'text',
-    content: '你好，我是人工智能助手，请问有什么可以帮你？'
+    content: '你好，我是ChatGPT人工智能助手，请问有什么可以帮你？'
   }, ]
   that.setData({
     msgList,
@@ -46,18 +51,17 @@ Page({
     inputBottom: 0
   },
 
-
   /**
    * 生命周期函数--监听页面加载
    */
   onLoad: function (options) {
+    wx.showTabBar();
     initData(this);
     this.setData({
-      cusHeadIcon: "/images/春日野穹.png",
+      humanHeadIcon: "/images/human.png",
+      robotHeadIcon: "/images/robot.png",
     });
   },
-
-
 
   /**
    * 生命周期函数--监听页面显示
@@ -68,7 +72,7 @@ Page({
       let username = wx.getStorageSync('username')
       wx.removeStorageSync('username')
       wx.request({
-        url: 'http://127.0.0.1:80/user/logout',
+        url: server + '/user/logout',
         method: "get",
         data: {
           "username": username,
@@ -83,10 +87,9 @@ Page({
           })
         }
       })
-
     }
     wx.request({
-      url: 'http://127.0.0.1:80/user/checkUserKey',
+      url: server + '/mcgpt/user/checkUserKey',
       method: "get",
       data: {
         "username": wx.getStorageSync('username'),
@@ -116,7 +119,7 @@ Page({
     }
 
     wx.connectSocket({
-      url: 'ws://127.0.0.1:80/chatWebSocket/' + wx.getStorageSync('username')
+      url: wx_server + '/mcgpt/chatWebSocket/' + wx.getStorageSync('username')
     })
     // console.log( new Date());
     // console.log(wx.getStorageSync('username'));
@@ -126,11 +129,11 @@ Page({
     wx.onSocketOpen((res) => {
       socketOpen = true
       console.log("打开socket");
-      wx.showToast({
-        icon: 'none',
-        title: '会话建立成功',
-        duration: 500
-      })
+      // wx.showToast({
+      //   icon: 'none',
+      //   title: '会话建立成功',
+      //   duration: 500
+      // })
       socketMsgQueue = []
       wx.onSocketMessage((result) => {
         result.data = result.data.replace(" ", "&nbsp;");
@@ -157,11 +160,11 @@ Page({
     wx.closeSocket()
     wx.onSocketClose((result) => {
       console.log("socket关闭成功");
-      wx.showToast({
-        icon: 'none',
-        title: '会话关闭成功',
-        duration: 500
-      })
+      // wx.showToast({
+      //   icon: 'none',
+      //   title: '会话关闭成功',
+      //   duration: 500
+      // })
     })
   },
   /**
@@ -229,6 +232,19 @@ Page({
       msgList,
       inputVal
     });
+  },
+
+  handleImageClick: function () {
+    // const query = wx.createSelectorQuery();
+    // query.select('#ipt').boundingClientRect();
+    // query.exec((res) => {
+    //   console.log(res);
+    //   if (res && res[0]) {
+    //     const input = res[0].node;
+    //     console.log(input);
+    //     input.confirm();
+    //   }
+    // })
   },
 
   /**

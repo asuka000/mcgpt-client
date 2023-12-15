@@ -1,0 +1,19 @@
+.v1 .home_img_container {
+  height: 400rpx;
+  width: 600rpx;
+  margin: 0 auto;
+  margin-top: 150rpx;
+  margin-left: 150rpx;
+}
+
+.v1 .home_img {
+  width: 400rpx;
+  height: 300rpx;
+  border-radius: 50%;
+  display: inline-blocks;
+}
+
+.v1 .logout_btn {
+  margin-top: -150rpx;
+}
+
