@@ -1,10 +1,11 @@
 {
-  "pages": [  
+  "pages": [
     "pages/login/login",
     "pages/model/model",
     "pages/chat/chat",
     "pages/history/history",
-    "pages/logout/logout"
+    "pages/logout/logout",
+    "pages/regist/regist"
   ],
   "window": {
     "backgroundTextStyle": "light",
@@ -12,11 +13,12 @@
     "navigationBarTitleText": "ChatGPT聊天助手",
     "navigationBarTextStyle": "black"
   },
+  "lazyCodeLoading": "requiredComponents",
   "style": "v2",
   "sitemapLocation": "sitemap.json",
   "tabBar": {
     "selectedColor": "#33a3dc",
-    "list": [   
+    "list": [
       {
         "pagePath": "pages/chat/chat",
         "text": "聊天",

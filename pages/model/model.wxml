@@ -1,10 +1,14 @@
 <view class="v1">
-  <image src="/images/robot35.png" class="img-35" />
+  <view class="title">
+    <text>你好,{{username}},请选择AI模型</text>
+  </view>
+
+  <image src="https://fxbg.xksztech.com:8445/mcgpt/images/robot-left.png" class="img-35" />
   <button class="btn-35" bind:tap="chatByModel35">
-    Model3.5
+    <image src="https://fxbg.xksztech.com:8445/mcgpt/images/3.5.png" class="btn-img-35" />
   </button>
-  <image src="/images/robot40.png" class="img-40" />
+  <image src="https://fxbg.xksztech.com:8445/mcgpt/images/robot-right.png" class="img-40" />
   <button class="btn-40" bind:tap="chatByModel40">
-    Model4.0
+    <image src="https://fxbg.xksztech.com:8445/mcgpt/images/4.0.png" class="btn-img-40"/>
   </button>
 </view>

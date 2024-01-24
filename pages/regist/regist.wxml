@@ -1,0 +1,36 @@
+<!--pages/regist/regist.wxml-->
+<view class="v1">
+  <view class="v2">
+    <view class="username">
+      <image src="/images/user.png" class="ur" />
+      <input placeholder="请输入账号(英文、数字、下划线)：" type="text" bindinput="username" value="{{username}}" />
+    </view>
+
+    <view class="password">
+      <image src="/images/password.png" class="pw" />
+      <input placeholder="请输入密码(不少于6位)：" type="text" bindinput="password" value="{{password}}" />
+    </view>
+
+    <view class="realname">
+      <image src="/images/name.png" class="rm" />
+      <input placeholder="请输入姓名：" type="text" bindinput="realname" value="{{realname}}" />
+    </view>
+
+    <view class="secretkey">
+      <image src="/images/secret.png" class="sk" />
+      <input placeholder="请输入口令：" type="text" bindinput="secretkey" value="{{secretkey}}" />
+    </view>
+
+    <!-- <view class="clear">
+      <button type="primary" class="btn-clear" bind:tap="clear">清空</button>
+    </view> -->
+
+    <view class="regist">
+      <button type="primary" class="btn-regist" bind:tap="regist">注册</button>
+    </view>
+
+    <view class="photo">
+      <image src="https://fxbg.xksztech.com:8445/mcgpt/images/robot-regist.png" class="bg"></image>
+    </view>
+  </view>
+</view>

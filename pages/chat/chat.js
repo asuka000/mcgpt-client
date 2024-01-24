@@ -72,7 +72,7 @@ Page({
       let username = wx.getStorageSync('username')
       wx.removeStorageSync('username')
       wx.request({
-        url: server + '/user/logout',
+        url: server + '/mcgpt/user/logout',
         method: "get",
         data: {
           "username": username,
@@ -234,17 +234,12 @@ Page({
     });
   },
 
-  handleImageClick: function () {
-    // const query = wx.createSelectorQuery();
-    // query.select('#ipt').boundingClientRect();
-    // query.exec((res) => {
-    //   console.log(res);
-    //   if (res && res[0]) {
-    //     const input = res[0].node;
-    //     console.log(input);
-    //     input.confirm();
-    //   }
-    // })
+  imageClick: function () {
+    wx.showToast({
+      icon: 'none',
+      title: 'Model3.5不支持图像交流',
+      duration: 1000
+    })
   },
 
   /**

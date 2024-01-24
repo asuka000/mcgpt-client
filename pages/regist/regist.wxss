@@ -1,0 +1,178 @@
+/* pages/create/create.wxss */
+.v1 {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgb(250, 248, 248);
+}
+
+/* 白色区域 */
+.v1 .v2 {
+  position: relative;
+  margin-top: 150rpx;
+  left: 100rpx;
+  width: 545rpx;
+  height: 600rpx;
+  background-color: rgb(250, 248, 248);
+  border-radius: 50rpx;
+}
+
+.v1 .v2 .photo {
+  align-content: center;
+}
+
+.v1 .v2 .photo .bg {
+  width: 350rpx;
+  height: 500rpx;
+  margin-top: -200rpx;
+  margin-left: -50rpx;
+  margin-bottom: 50rpx;
+  transform: rotate(15deg);
+}
+
+/* 手机图片+输入框+下划线的父容器view */
+.v1 .v2 .username {
+  margin-top: -600rpx;
+  margin-left: -50rpx;
+  position: absolute;
+  display: flex;
+  width: 650rpx;
+  height: 90rpx;
+  background-color: white;
+  font-size: 30rpx;
+}
+
+/* 手机图标 */
+.v1 .v2 .username image {
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+.v1 .v2 .username input {
+  width: 550rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.v1 .v2 .password {
+  margin-top: -450rpx;
+  margin-left: -50rpx;
+  position: absolute;
+  display: flex;
+  width: 650rpx;
+  height: 90rpx;
+  background-color: white;
+}
+
+/* 密码图标 */
+.v1 .v2 .password .pw {
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* 密码输入框 */
+.v1 .v2 .password input {
+  width: 550rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.v1 .v2 .realname {
+  margin-top: -300rpx;
+  margin-left: -50rpx;
+  position: absolute;
+  display: flex;
+  width: 650rpx;
+  height: 90rpx;
+  background-color: white;
+}
+
+/* 密码图标 */
+.v1 .v2 .realname .rm {
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  width: 50rpx;
+  height: 55rpx;
+}
+
+/* 密码输入框 */
+.v1 .v2 .realname input {
+  width: 550rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+.v1 .v2 .secretkey {
+  margin-top: -150rpx;
+  margin-left: -50rpx;
+  position: absolute;
+  display: flex;
+  width: 650rpx;
+  height: 90rpx;
+  background-color: white;
+}
+
+/* 密码图标 */
+.v1 .v2 .secretkey .sk {
+  padding-top: 20rpx;
+  padding-left: 20rpx;
+  width: 50rpx;
+  height: 50rpx;
+}
+
+/* 密码输入框 */
+.v1 .v2 .secretkey input {
+  width: 550rpx;
+  font-size: 30rpx;
+  margin-top: 20rpx;
+  margin-left: 30rpx;
+}
+
+/* .v1 .v2 .clear {
+  margin-left: -50rpx;
+  margin-top: 650rpx;
+  width: 250rpx;
+  height: 100rpx;
+}
+
+.v1 .v2 .clear button {
+  padding: 0rpx;
+  line-height: 70rpx;
+  font-size: 40rpx;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+} */
+
+.v1 .v2 .regist {
+  margin-left: 350rpx;
+  margin-top: 700rpx;
+  width: 250rpx;
+  height: 250rpx;
+}
+
+.v1 .v2 .regist button {
+  width: 20vw;
+  padding: 0rpx;
+  line-height: 70rpx;
+  font-size: 50rpx;
+  width: 100%;
+  height: 100%;
+  border-radius: 5rpx;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 90%;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5);
+}

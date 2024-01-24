@@ -37,7 +37,7 @@
   </scroll-view>
 
   <view class='inputRoom' style='bottom: {{inputBottom}}'>
-    <input id='ipt' bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send' bindfocus='focus' bindblur='blur'></input>
-    <image src="/images/send.png" style="width:24px;height:24px;margin-left: 3vw;" bindtap="handleImageClick"></image>
+    <image src="/images/image.png" class="btn-image" bindtap="imageClick"></image>
+    <input class="input" bindconfirm='sendClick' adjust-position='{{false}}' value='{{inputVal}}' confirm-type='send' bindfocus='input' bindblur='blur'></input>   
   </view>
 </view>

@@ -10,39 +10,60 @@
   margin-top: 150rpx;
   margin-left: 50rpx;
   width: 300rpx;
-  height: 300rpx; 
+  height: 450rpx; 
 }
 .v1 .img-40 {
-  margin-top: 50rpx;
+  margin-top: -50rpx;
   margin-left: 350rpx;
   width: 300rpx;
-  height: 300rpx;
+  height: 450rpx;
 }
 .v1 .btn-35 {
-  margin-top: -350rpx;
-  margin-left: 400rpx;
+  margin-top: -450rpx;
+  margin-left: 340rpx;
   text-align: center !important;
   vertical-align:middle !important;
   width: 250rpx;
   height: 100rpx;
   font-size: 35rpx;
-  /* border-radius: 15%; */
-  background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid #000000; /* 设置边框宽度、样式和颜色 */  
-  padding: 10px; /* 根据需要设置内边距 */  
+  border-radius: 10%;
+  /* background-color: rgba(255, 255, 255, 0.5); */
+  /* border: 1px solid #000000; 设置边框宽度、样式和颜色   */
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+  /* padding: 10px; 根据需要设置内边距   */
   display: inline-block; /* 使得按钮在一行内显示 */  
 }
+
+.v1 .btn-img-35 {
+  width: 265rpx;
+  height: 108rpx;
+  margin-left: -50rpx;
+  margin-top: -18rpx;
+}
 .v1 .btn-40 {
-  margin-top: -350rpx;
-  margin-left: 50rpx;
+  margin-top: -450rpx;
+  margin-left: 80rpx;
   text-align: center !important;
   vertical-align:middle !important;
   width: 250rpx;
   height: 100rpx;
   font-size: 35rpx;
-  /* border-radius: 15%; */
+  border-radius: 10%;
   background-color: rgba(255, 255, 255, 0.5);
-  border: 1px solid #000000; /* 设置边框宽度、样式和颜色 */  
-  padding: 10px; /* 根据需要设置内边距 */  
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.5); 
+  /* border: 1px solid #000000; 设置边框宽度、样式和颜色   */
+  /* padding: 10px; 根据需要设置内边距   */
   display: inline-block; /* 使得按钮在一行内显示 */  
+}
+.v1 .btn-img-40 {
+  width: 265rpx;
+  height: 108rpx;
+  margin-left: -50rpx;
+  margin-top: -18rpx;
+}
+.v1 .title {
+  margin-top: 10rpx;
+  margin-left: 50rpx;
+  margin-bottom: -50rpx;
+  font-size: 40rpx;
 }

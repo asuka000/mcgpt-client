@@ -5,15 +5,14 @@ let username = ''
 let password = ''
 let server = 'https://fxbg.xksztech.com:8445'
 // let server = 'https://localhost:8445'
-var log = require('../../utils/log.js');
 
 Page({
   data: {
     username: '',
     password: '',
     clientHeight: '',
-    open: false,//默认不显示密码
-    focus:false,//是否获取焦点
+    open: false, //默认不显示密码
+    focus: false, //是否获取焦点
   },
   onLoad() {
     wx.hideTabBar();
@@ -22,15 +21,14 @@ Page({
     //     url: '/pages/mode/mode',
     //   })
     // }
-    var that = this
-    wx.getSystemInfo({
-      success: function (res) {
-        // console.log(res.windowHeight)
-        that.setData({
-          clientHeight: res.windowHeight
-        });
-      }
-    })
+    // wx.getSystemInfo({
+    //   success: function (res) {
+    //     // console.log(res.windowHeight)
+    //     this.setData({
+    //       clientHeight: res.windowHeight
+    //     });
+    //   }
+    // })
   },
 
   //获取输入款内容
@@ -41,19 +39,23 @@ Page({
     password = e.detail.value
   },
   //登录事件
-  login() {  
+  login() {
     let flag = false //表示账户是否存在,false为初始值
     if (username == '') {
       wx.showToast({
         icon: 'none',
         title: '账号不能为空',
+        duration: 2000,
       })
+      return;
     };
     if (password == '') {
       wx.showToast({
         icon: 'none',
         title: '密码不能为空',
+        duration: 2000,
       })
+      return;
     };
     wx.request({
       url: server + '/mcgpt/user/login',
@@ -65,12 +67,12 @@ Page({
       success: ({
         data
       }) => {
-          // 处理请求中的错误  
-          wx.showToast({
-            icon: 'none',
-            title: '123',
-            duration: 2500
-          }) 
+        // 处理请求中的错误  
+        wx.showToast({
+          icon: 'none',
+          title: '登录',
+          duration: 2500
+        })
         console.log(data);
         if (data.code === 200) {
           // wx.showToast({
@@ -86,7 +88,7 @@ Page({
             url: '/pages/model/model',
           })
         } else {
-          log.error( data.message);
+          console.log(data.message);
           wx.showToast({
             icon: 'none',
             title: data.message,
@@ -94,31 +96,37 @@ Page({
           })
         }
       },
-      catch: (error) => {  
+      catch: (error) => {
         // 处理请求中的错误  
         wx.showToast({
           icon: 'none',
           title: error,
           duration: 2500
-        }) 
-      }  
+        })
+      }
     })
   },
 
+  //注册事件
+  regist() {
+    wx.navigateTo({
+      url: '/pages/regist/regist',
+    })
+  },
 
-  switch() {
+  switch () {
     this.setData({
       open: !this.data.open
     })
   },
-  focus(){
+  focus() {
     this.setData({
-      focus:true
+      focus: true
     })
   },
-  blur(){
+  blur() {
     this.setData({
-      focus:false
+      focus: false
     })
   }
 })

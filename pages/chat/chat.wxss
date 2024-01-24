@@ -17,7 +17,7 @@ page {
 }
 
 input {
-  width: 76vw;
+  width: 78vw;
   height: 9.33vw;
   background-color: #fff;
   border-radius: 40rpx;
@@ -47,6 +47,12 @@ input {
   margin-right: -1.6vw;
   border-radius: 10rpx;
   z-index: 10;
+}
+
+.btn-image {
+  width:24px;
+  height:24px;
+  margin-left: 3vw;
 }
 
 .bg {

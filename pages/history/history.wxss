@@ -1,1 +1,77 @@
 /* pages/history/history.wxss */
+
+.v1 {
+  display: block;
+  position: absolute;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(255, 255, 255, 0.5);
+}
+
+.view-picker {
+  width: 730rpx;
+  padding-left: 20rpx;
+  /* margin-top: 5rpx; */
+  margin-left: 20rpx;
+  display: flex;
+  align-items: center;
+}
+
+.ipt-picker {
+  height: 60rpx;
+  width: 310rpx;
+  font-size: 30rpx;
+  border: 1px solid #000000;
+}
+
+.btn-picker {
+  width: 100rpx; 
+  height: 100rpx;
+  font-size: 25rpx;
+  padding-top: 20rpx;
+  background-color: rgba(0, 0, 0, 0);
+  padding-left: 10rpx; 
+  width: 80rpx; 
+}
+
+.img-calendar {
+  width: 60rpx;
+  height: 65rpx;
+  margin-left: -60rpx;
+  padding-left: 10rpx;
+  background-color: rgba(255, 255, 255, 0.1);
+}
+
+.txt-calendar {
+  margin-left: 5rpx;
+}
+.vw-query {
+  padding-left: 20rpx;
+  margin-left: 20rpx;
+  width: 550rpx;
+  font-size: 15px;
+  position: fixed;
+  display: flex;
+  align-items: center;
+  /* border: 1px solid #000000; */
+}
+
+.view-query {
+  padding-left: 500rpx;
+  margin-top: -225rpx;
+  display: flex;
+  align-items: center;
+}
+
+.btn-query {
+  display: flex;
+  background-color: rgba(255, 255, 255, 255);
+  border:none;    
+}
+
+.img-query {
+  width: 160rpx;
+  height: 200rpx;
+  margin-left: -50rpx;
+  padding-left: 10rpx;  
+}

@@ -3,8 +3,14 @@ let server = 'https://fxbg.xksztech.com:8445'
 //  let server = 'https://localhost:8445'
 
 Page({
-  data: {},
-
+  data: {
+    username: ''
+  },
+  onLoad: function () {
+    this.setData({
+      username: wx.getStorageSync('username')
+    });
+  },
   onShow: function () {
     if (wx.getStorageSync('expireTime') == null || wx.getStorageSync('expireTime') < Date.now()) {
       console.log(wx.getStorageSync('expireTime') + "-->" + Date.now());
